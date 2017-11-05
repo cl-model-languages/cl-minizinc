@@ -1,6 +1,11 @@
 
 # Cl-Minizinc - Common Interface to the MiniZinc-based Constraint Satisfaction solvers from Common Lisp
 
+This library provides a transpiler from S-expression to
+[MiniZinc](http://www.minizinc.org/) Constraint Satisfaction Programming language,
+and the sub-libraries that invoke Stat-of-the-Art CSP solvers using MiniZinc as the input language,
+such as the entrants of [MiniZinc Challenge](http://www.minizinc.org/challenge.html).
+
 ## Usage
 
 

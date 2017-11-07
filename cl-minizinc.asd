@@ -14,4 +14,17 @@
   :pathname "src"
   :components ((:file "package"))
   :description "Common Interface to the MiniZinc-based Constraint Satisfaction solvers from Common Lisp"
-  :in-order-to ((test-op (test-op :cl-minizinc.test))))
+  :in-order-to ((test-op (test-op :cl-minizinc.test)))
+  :defsystem-depends-on (:trivial-package-manager)
+  :perform
+  (load-op :before (op c)
+           (uiop:symbol-call :trivial-package-manager
+                             :ensure-program
+                             "mzn2fzn"
+                             :apt "minizinc"
+                             ;; :dnf ""
+                             ;; :yum ""
+                             :brew "minizinc"
+                             ;; :from-source (format nil "make -C ~a"
+                             ;;                      (asdf:system-source-directory :cl-minizinc))
+                             )))
